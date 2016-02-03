@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Kotori API</title>
+<style>
+body{
+  margin:0; 
+  padding:0; 
+  overflow-y:hidden
+}
+</style>
+</head>
+<body>
+<iframe id="iframe" frameborder="0" src="https://kotori.sinaapp.com/" style="width:100%;"></iframe>
+<script type="text/javascript"> 
+window.onerror = function() {
+	return true;
+} 
+window.onload = function() {
+	var headerH = 0; 
+	var h = window.innerHeight
+|| document.documentElement.clientHeight
+|| document.body.clientHeight;
+	document.getElementById('iframe').style.height = (h - headerH) + "px";
+}
+</script>
+</body>
+</html>
