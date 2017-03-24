@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title>Framework7 iOS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/framework7/1.5.4/css/framework7.ios.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/framework7/1.5.4/css/framework7.ios.colors.min.css">
+</head>
+
+<body>
+  <div class="statusbar-overlay"></div>
+  <div class="views">
+    <div class="view view-main">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="left"></div>
+          <div class="center sliding">Framework7</div>
+          <div class="right"><a href="#" class="open-panel link icon-only"><i class="icon icon-bars"></i></a></div>
+        </div>
+      </div>
+      <div class="pages navbar-through toolbar-through">
+        <div data-page="index" class="page">
+          <div class="page-content">
+            <div class="content-block-title">Welcome To Framework7</div>
+            <div class="content-block"><a href="#" id="dl_link" class="button">Download</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/framework7/1.5.4/js/framework7.min.js"></script>
+  <script type="text/javascript">
+  var myApp = new Framework7({
+    modalTitle: 'Framework7',
+    animateNavBackIcon: true,
+  });
+  document.querySelector('#dl_link').addEventListener('click', function() {
+    var a = document.createElement('a');
+    a.href = 'https://cache.pixiv.moe/aqours/music/442314572.mp3';
+    a.setAttribute('download', true);
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  });
+  </script>
+</body>
+
+</html>
