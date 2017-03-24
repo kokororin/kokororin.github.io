@@ -35,17 +35,20 @@
   </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/framework7/1.5.4/js/framework7.min.js"></script>
   <script type="text/javascript">
-  var myApp = new Framework7({
-    modalTitle: 'Framework7',
-    animateNavBackIcon: true,
-  });
+  if (location.hash !== '#nof7') {
+      var myApp = new Framework7({
+          modalTitle: 'Framework7',
+          animateNavBackIcon: true,
+      });
+  }
   document.querySelector('#dl_link').addEventListener('click', function() {
-    var a = document.createElement('a');
-    a.href = 'https://cache.pixiv.moe/aqours/music/442314572.mp3';
-    a.setAttribute('download', true);
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+      var a = document.createElement('a');
+      a.href = 'https://cache.pixiv.moe/aqours/music/442314572.mp3';
+      a.setAttribute('download', true);
+      a.className = 'external';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
   });
   </script>
 </body>
